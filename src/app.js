@@ -9,6 +9,10 @@ const transactionRoutes = require('./routes/transaction.routes.js')
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/',(req, res)=>{
+    res.send("Ledger Service is up and running")
+})
+
 app.use('/api/account/',accountRouter)
 app.use('/api/auth/',authRouter)
 app.use('/api/transactions',transactionRoutes)
